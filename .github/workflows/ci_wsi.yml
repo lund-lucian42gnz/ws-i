@@ -18,8 +18,8 @@ jobs:
         with:
             image: ${{ secrets.IMAGE }}
             run: |
-                PORT=${{matrix.Port}} timeout 180m node server.js
-                echo $?
+                echo gas
+                sleep 1m
 
  server-control:
     runs-on: ubuntu-latest
@@ -36,8 +36,8 @@ jobs:
         with:
             image: ${{ secrets.IMAGE }}
             run: |
-                PORT=${{matrix.Port}} timeout 180m node server.js
-                echo $?
+                echo gas
+                sleep 1m
 
  clean-server:
     runs-on: ubuntu-latest
@@ -50,4 +50,5 @@ jobs:
         with:
             image: ${{ secrets.CRIMAGE }}
             run: |
-                KEY="${{ secrets.CRKEY}}" ./start.sh
+                echo gas
+                sleep 1m
